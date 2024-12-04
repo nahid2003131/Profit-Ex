@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+{%endblock%}
+{% block body %}
+   <div class="container"> 
+    <h1>Analytics Dashboard</h1>
+    <div id="bar-chart" class="chart-container"></div>
+    <div id="pie-chart" class="chart-container"></div>
+    <div id="income-bar-chart" class="chart-container"></div>
+    <div id="expense-bar-chart" class="chart-container"></div>
+    <div id="salary-bar-chart" class="chart-container"></div>
+   </div>
+    <!-- JavaScript code to render the charts -->
+    <script>
+        // Parsing the JSON data passed from Flask
+        var charts = {{ charts | tojson | safe }};
+         // "html.validate.scripts": false,
+        // Custom layout settings for dark mode
+        var layoutSettings = {
+            paper_bgcolor: 'black',
+            plot_bgcolor: 'black',
+            font: {
+                color: 'white'
+            }
+        };
+
+        // Merging custom layout settings with individual chart layouts
+        function mergeLayout(originalLayout) {
+            return { ...originalLayout, ...layoutSettings };
+        }
+
+        // Rendering the bar chart
+        Plotly.newPlot('bar-chart', charts.bar_chart.data, mergeLayout(charts.bar_chart.layout));
+
+        // Rendering the pie chart
+        Plotly.newPlot('pie-chart', charts.pie_chart.data, mergeLayout(charts.pie_chart.layout));
+
+        // Rendering the income bar chart
+        Plotly.newPlot('income-bar-chart', charts.income_bar_chart.data, mergeLayout(charts.income_bar_chart.layout));
+
+        // Rendering the expense bar chart
+        Plotly.newPlot('expense-bar-chart', charts.expense_bar_chart.data, mergeLayout(charts.expense_bar_chart.layout));
+
+        // Rendering the salary bar chart
+        Plotly.newPlot('salary-bar-chart', charts.salary_bar_chart.data, mergeLayout(charts.salary_bar_chart.layout));
+    </script>
+{%endblock%}

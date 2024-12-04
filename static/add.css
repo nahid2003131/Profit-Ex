@@ -1,0 +1,93 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  row-gap: 1rem;
+}
+
+.container {
+  margin: auto;
+  width: 40%;
+  padding: 5px;
+  margin-top: 200px;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+body,
+input,
+button {
+  font-size: 0.9rem; /* Smaller font size */
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: hsl(0, 0%, 100%);
+  background-color: #121212; /* Dark background */
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== CONTENT ===============*/
+.content {
+  margin: 0 auto;
+  max-width: 400px; /* Smaller max-width */
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem; /* Smaller font size */
+  font-weight: 600;
+  background-image: linear-gradient(to left, #2d02a4, #eae3f1);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+
+label {
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="submit"] {
+  width: 100%;
+  padding: 0.5rem; /* Reduced padding */
+  border-radius: 0.3rem; /* Smaller border-radius */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border: 2px solid transparent;
+  color: hsl(0, 0%, 100%);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+input[type="text"]:focus,
+input[type="submit"]:hover {
+  border-color: #2d02a4; /* Change border color on focus/hover */
+}
+
+input[type="submit"] {
+  background: linear-gradient(to right, #2d02a4, #eae3f1); /* Gradient background */
+  cursor: pointer;
+}
+
+/* Glowing effect */
+input[type="text"]:focus,
+input[type="submit"]:hover {
+  box-shadow: 0 0 20px rgba(45, 2, 164, 0.5); /* Glowing effect */
+}
+.mess{
+  text-align: center;
+  color:red;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

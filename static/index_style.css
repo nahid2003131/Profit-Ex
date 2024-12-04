@@ -1,0 +1,23 @@
+
+.container{
+    margin: auto;
+    width: 94%;
+    padding: 10px;
+    margin-top: 50px;
+  }
+h1 {
+    font-size: 3rem; /* Smaller font size */
+    font-weight: 600;
+    background-image: linear-gradient(to left, #01eeff, #05ebf3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+  }
+.chart-container {
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(1, 67, 247, 0.5);
+    overflow: hidden; /* Ensures glow doesn't spill out */
+}

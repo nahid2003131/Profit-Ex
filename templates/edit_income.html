@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit.css') }}">
+    <title>Edit Income</title>
+ {% endblock %}
+ {% block body %}
+     <div="container">
+    <h1>Edit Income</h1>
+    <form method="POST">
+        <label for="source">Source:</label><br>
+        <input type="text" id="source" name="source" value="{{ income.source }}"><br>
+        <label for="amount">Amount:</label><br>
+        <input type="number" id="amount" name="amount" value="{{ income.amount }}"><br><br>
+        <button type="submit">Submit</button>
+    </form><div>
+{% endblock %}

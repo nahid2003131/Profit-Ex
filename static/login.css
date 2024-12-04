@@ -1,0 +1,298 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  color: hsl(0, 0%, 100%);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== LOGIN ===============*/
+.login {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  
+}
+
+.login__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.container {
+  position: relative;
+  background-color: hsla(0, 0%, 10%, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.089);
+  margin-inline: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+
+.login__content,
+.login__box {
+  display: grid;
+}
+
+.login__content {
+  row-gap: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.login__box {
+  grid-template-columns: max-content 1fr;
+  align-items: center;
+  column-gap: 0.75rem;
+  border-bottom: 2px solid hsla(0, 0%, 100%, 0.267);
+}
+
+.login__icon,
+.login__eye {
+  font-size: 1.25rem;
+}
+
+.login__input {
+  width: 100%;
+  padding-block: 0.8rem;
+  background: none;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.login__box-input {
+  position: relative;
+}
+
+.login__label {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  font-weight: 500;
+  transition: top 0.3s, font-size 0.3s;
+}
+
+
+.login__box:nth-child(2) input {
+  padding-right: 1.8rem;
+}
+
+.login__check,
+.login__check-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login__check {
+  margin-bottom: 1.5rem;
+}
+
+.login__check-label,
+.login__forgot,
+.login__register {
+  font-size: 0.813rem;
+}
+
+.login__check-group {
+  column-gap: 0.5rem;
+}
+
+.login__check-input {
+  width: 16px;
+  height: 16px;
+}
+
+.login__forgot {
+  color: hsl(0, 0%, 100%);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+.login__button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.login__register {
+  text-align: center;
+}
+
+.login__register a {
+  color: hsla(0, 0%, 100%, 0.233);
+  font-weight: 500;
+}
+
+.login__register a:hover {
+  text-decoration: underline;
+}
+
+/* Input focus move up label */
+.login__input:focus + .login__label {
+  top: -12px;
+  font-size: 0.813rem;
+}
+
+/* Input focus sticky top label */
+.login__input:not(:placeholder-shown).login__input:not(:focus) + .login__label {
+  top: -12px;
+  font-size: 0.813rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .login {
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Horizontally center the button and other elements */
+    justify-content: center; /* Vertically center all content */
+    width: 400px;
+    padding: 2rem;
+    background-color: hsla(0, 0%, 10%, 0); /* Semi-transparent background */
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    z-index: 1; /* Ensure it's above the background image */
+    gap: 0.5rem; /* Add spacing between child elements */
+  }
+  
+
+  .login__title {
+    font-size: 2rem;
+  }
+}
+.login__label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 500;
+  transition: top 0.3s, font-size 0.3s;
+}
+
+h3 {
+  font-size: 50px;
+  font-weight: 600;
+  font-style: italic; /* Makes the font italic */
+  font-family: 'Ubuntu', sans-serif; /* Ensure the correct font is used */
+  color: rgb(0, 179, 0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+  
+}
+h6{
+  font-size: 20px;
+  font-weight: 250;
+  font-style: italic; /* Makes the font italic */
+  font-family: 'Ubuntu', sans-serif; /* Ensure the correct font is used */
+  color: rgba(249, 252, 249, 0.719);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
+/* Centering parent container */
+#button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Reset any margin */
+  padding: 0; /* Reset any padding */
+}
+
+#button {
+  position: relative;
+  width: 60%;
+  border: 2px solid #0026ff70;
+  background-color: #0059ff52;
+  height: 40px;
+  color: white;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 
+    0 1.4px 2.8px rgba(0, 0, 0, 0.14),
+    0 3.3px 6.7px rgba(0, 0, 0, 0.2),
+    0 6.3px 12.5px rgba(0, 0, 0, 0.25),
+    0 11.2px 22.3px rgba(0, 0, 0, 0.3),
+    0 20.9px 41.8px rgba(0, 0, 0, 0.35),
+    0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+#button::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.25);
+  height: 100%;
+  width: 150px;
+  top: 0;
+  left: -200px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  filter: blur(10px);
+  transition: transform 0.5s ease;
+}
+
+#button:hover {
+  background-color: #05050598; /* Slightly darker blue */
+  box-shadow: 
+    0 3px 5px rgba(0, 0, 0, 0.2),
+    0 6px 10px rgba(0, 0, 0, 0.3),
+    0 12px 20px rgba(0, 0, 0, 0.4),
+    0 24px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px); /* Slight hover lift */
+}
+
+#button:hover::after {
+  transform: translateX(600px);
+}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convert | Export HTML Table to CSV & Excel File</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      {% endblock %}
+
+
+
+{% block body %}
+<div class="container">
+    <main class="table" id="customers_table">
+        <section class="table__header">
+            <h1>Employee Management</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <img src="static/images/search.png" alt="Search Icon">
+            </div>
+            <a href="/download_pdf/salary" class="export__link-button">
+                <img src="static/images/pdf.png" alt="Download PDF" style="width: 20px; height: 20px;">
+            </a>
+            
+            <a href="/add_employee" class="export__link-button">
+                <!-- Replace 'link-icon.gif' with the path to your GIF file -->
+                <img src="static/images/add.gif" alt="add_employee" style="width: 60px; height: 60px;">
+            </a>
+            
+                
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee_ID <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Name <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Position <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Salary in Taka <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Percentage <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        <td>{{ task.Name }}</td>
+                        <td>{{ task.Position }}</td>
+                        <td>{{ task.Salary }}</td>
+                        <td>
+                            <div class="percentage-bar" style="--progress-width: calc(({{ task.Salary }} / {{ total }}) * 100%);">
+                                {{ '%.2f' | format((task.Salary / total) * 100) }}%
+                            </div>
+                        </td>
+                        <td>
+                            <a href="/edit_employee/{{ task.id }}"><img src="static/images/edit.gif" alt="edit_employee" style="width: 20px; height: 20px;"></a> 
+                            <a href="/delete_employee/{{ task.id }}"><img src="static/images/deleteEm.gif" alt="Delete_employee" style="width: 20px; height: 20px;"></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+           
+        </section>
+    </main>
+  </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+      {% endblock %}
